@@ -19,7 +19,7 @@ class block_xapi_lrs extends block_base {
            $IsTeacher = $DB->count_records_select('role_assignments','userid = '.$USER->id.' AND (roleid = 1 OR roleid = 3)');
            $flag = ($IsTeacher > 0) ? 1 : 0;
            for ($i=0;$i< count($Tab);$i++){if ($USER->id == $Tab[$i]) $flag=2;}
-           $urlBase = 'http://formagri.educagri.fr/xapilrs/MesDatas.php';
+           $urlBase = 'http://lrs.annulab.com/MesDatas.php';
            $LeNom = $USER->firstname." ".$USER->lastname;
            $this->content = new stdClass();
            $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST']]);
