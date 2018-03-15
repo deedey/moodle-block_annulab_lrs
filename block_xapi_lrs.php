@@ -17,10 +17,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * annulabLRS block.
+ * xapi_lrs block must be used vith Annulab LRS
  *
  * @package    block_xapi_lrs
- * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
+ * @copyright  2018 Dey Bendifallah
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
