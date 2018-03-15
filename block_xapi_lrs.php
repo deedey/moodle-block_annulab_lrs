@@ -11,7 +11,7 @@ class block_xapi_lrs extends block_base {
         $this->content = new stdClass();
         if ($TinCanExist == 0)
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="Exige le plugins logstore_xapi">LrsAnnulab non actif</span>');
+                 ' title="Exige le plugin logstore_xapi">LrsAnnulab non actif</span>');
         else
         {
            $Tab = array();
