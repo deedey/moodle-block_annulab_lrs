@@ -11,7 +11,7 @@ class block_xapi_lrs extends block_base {
         $this->content = new stdClass();
         if ($TinCanExist == 0)
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="Exige le plugin logstore_xapi">LrsAnnulab non actif</span>');
+                 ' title="Exige le plugin logstore_xapi">LrsAnnulab is disabled</span>');
         else
         {
            $Tab = array();
@@ -23,7 +23,7 @@ class block_xapi_lrs extends block_base {
            $LeNom = $USER->firstname." ".$USER->lastname;
            $this->content = new stdClass();
            $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST']]);
-           $this->content->text = html_writer::link($url,"Mon historique personnel",array('target' => '_blank'));
+           $this->content->text = html_writer::link($url,"My own datas",array('target' => '_blank'));
        }
         $this->content->footer = '';
         return $this->content;
