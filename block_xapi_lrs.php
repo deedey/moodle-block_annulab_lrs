@@ -17,18 +17,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * xapi_lrs block must be used vith Annulab LRS
+ * annulab_lrs block must be used vith Annulab LRS
  *
- * @package    block_xapi_lrs
+ * @package    block_annulab_lrs
  * @copyright  2018 Dey Bendifallah
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 
 defined('MOODLE_INTERNAL') || die();
-class block_xapi_lrs extends block_base {
+class block_annulab_lrs extends block_base {
     public function init() {
-        $this->title = get_string('pluginname', 'block_xapi_lrs');
+        $this->title = get_string('pluginname', 'block_annulab_lrs');
     }
 
     public function get_content() {

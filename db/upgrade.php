@@ -52,9 +52,11 @@ defined('MOODLE_INTERNAL') || die();
  * @param int $oldversion
  * @param object $block
  */
-function xmldb_block_xapi_lrs_upgrade($oldversion, $block) {
+function xmldb_block_annulab_lrs_upgrade($oldversion, $block) {
     global $CFG;
 
+    // Moodle v3.0release upgrade line.
+    // Put any upgrade step following this.
     // Moodle v3.1.0 release upgrade line.
     // Put any upgrade step following this.
 
