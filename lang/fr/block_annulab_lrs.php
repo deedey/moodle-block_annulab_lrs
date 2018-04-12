@@ -1,5 +1,7 @@
 <?php
-$string['pluginname'] = 'annulab_lrs';
-$string['annulab_lrs'] = 'annulab_lrs';
-$string['annulab_lrs:addinstance'] = 'Ajouter un block annulab_lrs';
+$string['pluginname'] = 'Mon historique';
+$string['annulablrs'] = 'Mon Historique';
+$string['annulablrs:addinstance'] = 'Ajouter un block Mon historique';
+$string['annulablrs_nolrsplug'] = 'Exige le plugin logstore_xapi';
+$string['annulablrs_isdisabled'] = 'LrsAnnulab est inactif';
 ?>
