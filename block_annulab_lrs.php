@@ -48,7 +48,7 @@ class block_annulab_lrs extends block_base {
            $urlBase = 'http://lrs.annulab.com/MesDatas.php';
            $LeNom = $USER->firstname." ".$USER->lastname;
            $this->content = new stdClass();
-           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST']]);
+           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST']]); 
            $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
        }
         $this->content->footer = '';
