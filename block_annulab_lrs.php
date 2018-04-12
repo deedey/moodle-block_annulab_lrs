@@ -37,7 +37,7 @@ class block_annulab_lrs extends block_base {
         $this->content = new stdClass();
         if ($TinCanExist == 0)
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs')</span>');
+                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
         else
         {
            $Tab = array();
