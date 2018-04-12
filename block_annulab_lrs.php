@@ -37,7 +37,7 @@ class block_annulab_lrs extends block_base {
         $this->content = new stdClass();
         if ($TinCanExist == 0)
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="Exige le plugin logstore_xapi">LrsAnnulab is disabled</span>');
+                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs')</span>');
         else
         {
            $Tab = array();
@@ -49,7 +49,7 @@ class block_annulab_lrs extends block_base {
            $LeNom = $USER->firstname." ".$USER->lastname;
            $this->content = new stdClass();
            $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST']]);
-           $this->content->text = html_writer::link($url,"My own datas",array('target' => '_blank'));
+           $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
        }
         $this->content->footer = '';
         return $this->content;
