@@ -5,4 +5,3 @@ $plugin->version   = 2018041100;
 $plugin->requires  = 2015051109;
 $plugin->component = 'block_annulab_lrs';
 $plugin->maturity = MATURITY_STABLE;
-?>
