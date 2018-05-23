@@ -50,7 +50,7 @@ class block_annulab_lrs extends block_base {
            $codage = urlencode($cod->value);
            $Tab = array();
            $Tab = explode(',',$CFG->siteadmins);
-           $IsTeacher = $DB->count_records_select('role_assignments','userid = '.$USER->id.' AND (roleid = 1 OR roleid = 3)');
+           $IsTeacher = $DB->count_records_select('role_assignments','userid = ? AND (roleid = ? OR roleid = ?)', array($USER->id, 1, 3);
            $flag = ($IsTeacher > 0) ? 1 : 0;
            for ($i=0;$i< count($Tab);$i++){if ($USER->id == $Tab[$i]) $flag=2;}
            $urlBase = 'http://lrsdata.com/MesDatas.php';
