@@ -27,12 +27,18 @@
 
 defined('MOODLE_INTERNAL') || die();
 class block_annulab_lrs extends block_base {
+
     public function init() {
         $this->title = get_string('pluginname', 'block_annulab_lrs');
     }
 
     public function get_content() {
         global $USER, $_SERVER, $DB;
+  
+        if ($this->content !== null) {
+            return $this->content;
+        }
+        
         $TinCanExist = $DB->count_records_select('config_plugins','name = "endpoint" AND value = "http://lrsdata.com/xapi/"');
         $this->content = new stdClass();
         if ($TinCanExist == 0)
