@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 class block_annulab_lrs extends block_base {
 
     public function init() {
-        $this->title = get_string('pluginname', 'block_annulab_lrs');
+        $this->title = get_string('pluginname', 'Annulab LRS Block');
     }
 
     public function get_content() {
@@ -54,13 +54,12 @@ class block_annulab_lrs extends block_base {
            $flag = ($IsTeacher > 0) ? 1 : 0;
            for ($i=0;$i< count($Tab);$i++){if ($USER->id == $Tab[$i]) $flag=2;}
            $urlBase = 'http://lrsdata.com/MesDatas.php';
-           $LeNom = $USER->firstname." ".$USER->lastname;
+           $LeNom = fullname($USER);
            $this->content = new stdClass();
-           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$_SERVER['HTTP_HOST'],'codage'=>$codage]); 
+           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$CFG->wwwroot,'codage'=>$codage]); 
            $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
        }
         $this->content->footer = '';
         return $this->content;
     }
 }
-?>
