@@ -46,17 +46,12 @@ class block_annulab_lrs extends block_base {
                  ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
         else
         {
-           $cod = $DB->get_record('config_plugins',array('plugin'=>'logstore_xapi', 'name' =>'username'));
-           $codage = urlencode($cod->value);
-           $Tab = array();
-           $Tab = explode(',',$CFG->siteadmins);
-           $IsTeacher = $DB->count_records_select('role_assignments','userid = ? AND (roleid = ? OR roleid = ?)', array($USER->id, 1, 3);
-           $flag = ($IsTeacher > 0) ? 1 : 0;
-           for ($i=0;$i< count($Tab);$i++){if ($USER->id == $Tab[$i]) $flag=2;}
+           $IsTeacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
+           $flag = (empty($IsTeacher)) ? 0 : 1 ;
            $urlBase = 'http://lrsdata.com/MesDatas.php';
            $LeNom = fullname($USER);
            $this->content = new stdClass();
-           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$CFG->wwwroot,'codage'=>$codage]); 
+           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$CFG->wwwroot]); 
            $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
        }
         $this->content->footer = '';
