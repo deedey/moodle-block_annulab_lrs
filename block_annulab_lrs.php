@@ -39,19 +39,19 @@ class block_annulab_lrs extends block_base {
             return $this->content;
         }
         
-        $TinCanExist = $DB->count_records_select('config_plugins','name = "endpoint" AND value = "http://lrsdata.com/xapi/"');
+        $tincanexist = $DB->count_records_select('config_plugins','name = "endpoint" AND value = "http://lrsdata.com/xapi/"');
         $this->content = new stdClass();
-        if ($TinCanExist == 0)
+        if ($tincanexist == 0)
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
                  ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
         else
         {
-           $IsTeacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
-           $flag = (empty($IsTeacher)) ? 0 : 1 ;
-           $urlBase = 'http://lrsdata.com/MesDatas.php';
-           $LeNom = fullname($USER);
+           $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
+           $flag = (empty($isteacher)) ? 0 : 1 ;
+           $urlbase = 'http://lrsdata.com/MesDatas.php';
+           $lenom = fullname($USER);
            $this->content = new stdClass();
-           $url = new moodle_url($urlBase, ['flag'=>$flag,'nom'=>$LeNom,'LMSorigin'=>$CFG->wwwroot]); 
+           $url = new moodle_url($urlbase, ['flag'=>$flag,'nom'=>$lenom,'LMSorigin'=>$CFG->wwwroot]); 
            $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
        }
         $this->content->footer = '';
