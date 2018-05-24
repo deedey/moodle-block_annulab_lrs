@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+/* This file is part of Moodle - http://moodle.org/
 //
 // This file needs a free subscription to http://lrs.annulab.com
 //
@@ -15,7 +15,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
+*/
 /**
  * annulab_lrs block must be used vith Annulab LRS
  *
@@ -39,11 +39,14 @@ class block_annulab_lrs extends block_base {
             return $this->content;
         }
         
-        $tincanexist = $DB->count_records_select('config_plugins','name = "endpoint" AND value = "http://lrsdata.com/xapi/"');
+        $tincanexist = $DB->count_records_select('config_plugins', 'name = "endpoint" AND value = "http://lrsdata.com/xapi/"');
         $this->content = new stdClass();
         if ($tincanexist == 0)
+        {
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
+                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.
+                 get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
+        }
         else
         {
            $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
