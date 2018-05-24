@@ -33,7 +33,7 @@ class block_annulab_lrs extends block_base {
     }
 
     public function get_content() {
-        global $USER, $_SERVER, $DB;
+        global $USER, $CFG, $DB;
   
         if ($this->content !== null) {
             return $this->content;
