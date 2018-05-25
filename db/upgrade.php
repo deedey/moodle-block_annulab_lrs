@@ -15,14 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* annulab_lrs block must be used vith Annulab LRS
-*
-* @package    block_annulab_lrs
-* @copyright  2018 Dey Bendifallah
-* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
-*/
-
-/**
  * This file keeps track of upgrades to the navigation block
  *
  * Sometimes, changes between versions involve alterations to database structures
@@ -38,13 +30,14 @@
  *
  * Please do not forget to use upgrade_set_timeout()
  * before any action that may take longer time to finish.
- *
+*/
+/**
  * annulab_lrs block must be used vith Annulab LRS
  *
  * @package    block_annulab_lrs
  * @copyright  2018 Dey Bendifallah
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+*/
  
 defined('MOODLE_INTERNAL') || die();
 
