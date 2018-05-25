@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* annulab_lrs block must be used vith Annulab LRS
-*
-* @package    block_annulab_lrs
-* @copyright  2018 Dey Bendifallah
-* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * annulab_lrs block must be used vith Annulab LRS
+ *
+ * @package    block_annulab_lrs
+ * @copyright  2018 Dey Bendifallah
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 */
 
 
@@ -36,28 +36,28 @@ class block_annulab_lrs extends block_base {
         if ($this->content !== null) {
             return $this->content;
         }
-        
+
         $endpoint = get_config('block_annulab_lrs', 'endpoint');
         if ($endpoint == "http://lrsdata.com/xapi/") {
             $tincanexist = true;
-        }        
+        }  
         $this->content = new stdClass();
         if (!isset($tincanexist))
         {
             $this->content->text = html_writer::div('<span style="color:#FF0000;font-weight: bold;"'.
-                 ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.
-                 get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
+            ' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.
+            get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
         }
         else
         {
-           $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
-           $flag = (empty($isteacher)) ? 0 : 1 ;
-           $urlbase = 'http://lrsdata.com/MesDatas.php';
-           $lenom = fullname($USER);
-           $this->content = new stdClass();
-           $url = new moodle_url($urlbase, ['flag' => $flag,'nom' => $lenom,'LMSorigin' => $CFG->wwwroot]); 
-           $this->content->text = html_writer::link($url,get_string('annulablrs', 'block_annulab_lrs'),array('target' => '_blank'));
-       }
+            $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
+            $flag = (empty($isteacher)) ? 0 : 1 ;
+            $urlbase = 'http://lrsdata.com/MesDatas.php';
+            $lenom = fullname($USER);
+            $this->content = new stdClass();
+            $url = new moodle_url($urlbase, ['flag' => $flag, 'nom' => $lenom, 'LMSorigin' => $CFG->wwwroot]);
+            $this->content->text = html_writer::link($url, get_string('annulablrs', 'block_annulab_lrs'), array('target' => '_blank'));
+        }
         $this->content->footer = '';
         return $this->content;
     }
