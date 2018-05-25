@@ -15,14 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* annulab_lrs block must be used vith Annulab LRS
-*
-* @package    block_annulab_lrs
-* @copyright  2018 Dey Bendifallah
-* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * annulab_lrs block must be used vith Annulab LRS
+ *
+ * @package    block_annulab_lrs
+ * @copyright  2018 Dey Bendifallah
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 */
 
-    $capabilities = array(
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = array(
 
     'block/annulab_lrs:myaddinstance' => array(
         'captype' => 'write',
