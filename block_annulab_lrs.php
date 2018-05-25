@@ -37,7 +37,7 @@ class block_annulab_lrs extends block_base {
             return $this->content;
         }
 
-        $endpoint = get_config('block_annulab_lrs', 'endpoint');
+        $endpoint = get_config('logstore_xapi', 'endpoint');
         if ($endpoint == "http://lrsdata.com/xapi/") {
             $tincanexist = true;
         }
