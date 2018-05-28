@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 class block_annulab_lrs extends block_base {
 
     public function init() {
-        $this->title = get_string('pluginname', 'Annulab LRS Block');
+        $this->title = get_string('pluginname', 'block_annulab_lrs');
     }
 
     public function get_content() {
