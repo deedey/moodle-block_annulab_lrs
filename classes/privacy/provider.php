@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Privacy Subsystem implementation for block_myoverview.
+ * annulab_lrs block must be used vith Annulab LRS
  *
  * @package    block_annulab_lrs
- * @copyright  2018 Howard Miller
+ * @copyright  2018 Dey Bendifallah
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
