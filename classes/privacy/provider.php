@@ -23,19 +23,11 @@
  */
 
 namespace block_annulab_lrs\privacy;
-
 defined('MOODLE_INTERNAL') || die();
 
 use \core_privacy\local\metadata\collection;
 
 class provider implements \core_privacy\local\metadata\provider {
-
-    /**
-     * Returns meta-data information about the annulab_lrs block.
-     *
-     * @param  collection $collection A collection of meta-data.
-     * @return collection Return the collection of meta-data.
-     */
      public static function get_metadata(collection $collection) : collection {
             $collection->add_external_location_link('annulab_lrs', [
                       'fullname' => 'privacy:metadata:annulab_lrs:fullname',
@@ -43,4 +35,3 @@ class provider implements \core_privacy\local\metadata\provider {
         return $collection;
     }
 }
-?>
