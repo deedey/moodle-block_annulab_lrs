@@ -28,12 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 
 use \core_privacy\local\metadata\collection;
 
-/**
- * Privacy Subsystem for block_annulab_lrs.
- *
- * @copyright  2018 Howard Miller
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 class provider implements \core_privacy\local\metadata\provider {
 
     /**
