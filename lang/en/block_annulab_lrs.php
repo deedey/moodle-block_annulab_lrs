@@ -23,8 +23,10 @@
 */
 
 $string['pluginname'] = 'Annulab LRS';
-$string['annulablrs'] = 'Annulab LRS';
+$string['annulablrs'] = 'My logs on Annulab LRS';
 $string['annulablrs:addinstance'] = 'Add a new Annulab LRS block';
 $string['annulablrs:myaddinstance'] = 'Add a new Annulab LRS block to dashboard';
 $string['annulablrs_nolrsplug'] = 'Needs Logstore_xapi plugin';
 $string['annulablrs_isdisabled'] = 'AnnulabLRS is disabled';
+$string['privacy:metadata:annulab_lrs:fullname'] = 'Fullname passed through from the annulab_lrs subsystem.';
+$string['privacy:metadata:annulab:externalpurpose'] = 'This plugin sends fullname externally using the a link to provider.';
