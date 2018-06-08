@@ -28,3 +28,5 @@ $string['annulablrs:addinstance'] = 'Ajouter un block Annulab LRS';
 $string['annulablrs:myaddinstance'] = 'Ajouter un block Annulab LRS';
 $string['annulablrs_nolrsplug'] = 'Exige le plugin logstore_xapi';
 $string['annulablrs_isdisabled'] = 'LrsAnnulab est inactif';
+$string['privacy:metadata:annulab_lrs:fullname'] = 'Le nom complet du USER est transmis via cette application :annulab_lrs .';
+$string['privacy:metadata:annulab:externalpurpose'] = 'Ce plugin envoie le nom complet du USER vers un site externe via un lien.';
