@@ -22,8 +22,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->release = '1.1.0 (Build: 2018061700)';
-$plugin->version   = 2018061700;
+$plugin->release = '1.1.1 (Build: 2019041200)';
+$plugin->version   = 2019041200;
 $plugin->requires  = 2015051109;
 $plugin->component = 'block_annulab_lrs';
 $plugin->maturity = MATURITY_STABLE;
