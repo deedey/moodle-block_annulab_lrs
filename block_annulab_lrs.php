@@ -38,7 +38,7 @@ class block_annulab_lrs extends block_base {
         }
 
         $endpoint = get_config('logstore_xapi', 'endpoint');
-        if ($endpoint == "http://lrsdata.com/xapi/") {
+        if ($endpoint == "https://lrsdata.com/xapi/") {
             $tincanexist = true;
         }
         $this->content = new stdClass();
@@ -48,7 +48,7 @@ class block_annulab_lrs extends block_base {
             $codage = get_config('logstore_xapi', 'password');
             $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
             $flag = (empty($isteacher)) ? 0 : 1;
-            $urlbase = 'http://lrsdata.com/MesDatas.php';
+            $urlbase = 'https://lrsdata.com/MesDatas.php';
             $lenom = fullname($USER);
             $this->content = new stdClass();
             $url = new moodle_url($urlbase, ['flag' => $flag, 'nom' => $lenom, 'LMSorigin' => $CFG->wwwroot, 'codage' => $codage]);
