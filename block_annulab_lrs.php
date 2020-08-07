@@ -45,13 +45,15 @@ class block_annulab_lrs extends block_base {
         if (!isset($tincanexist)) {
             $this->content->text = html_writer::div('<span style="font-weight: bold;"'.' title="'.get_string('annulab_lrs_nolrsplug', 'block_annulab_lrs').'">'.get_string('annulablrs_isdisabled', 'block_annulab_lrs').'</span>');
         } else {
+            $user=$USER;
             $codage = get_config('logstore_xapi', 'password');
             $isteacher = get_user_capability_course('block/annulab_lrs:addinstance', null, true, '', '', 1);
             $flag = (empty($isteacher)) ? 0 : 1;
             $urlbase = 'https://lrsdata.com/MesDatas.php';
             $lenom = fullname($USER);
+            $lemail = $user->email;
             $this->content = new stdClass();
-            $url = new moodle_url($urlbase, ['flag' => $flag, 'nom' => $lenom, 'LMSorigin' => $CFG->wwwroot, 'codage' => $codage]);
+            $url = new moodle_url($urlbase, ['flag' => $flag, 'nom' => $lenom, 'mail' => $lemail, 'LMSorigin' => $CFG->wwwroot, 'codage' => $codage]);
             $this->content->text = html_writer::link($url, get_string('annulablrs', 'block_annulab_lrs'), array('target' => '_blank'));
         }
         $this->content->footer = '';
